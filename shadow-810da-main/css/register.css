@@ -1,0 +1,90 @@
+:root {
+    --primary: #3498db;
+    --secondary: #2c3e50;
+    --light: #ecf0f1;
+    --danger: #e74c3c;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #3498db, #8e44ad);
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .register-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    padding: 2rem;
+    width: 350px;
+    text-align: center;
+  }
+  
+  h2 {
+    color: var(--secondary);
+    margin-bottom: 1.5rem;
+  }
+  
+  .input-group {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    border: 1px solid var(--light);
+    border-radius: 8px;
+    padding: 0.5rem;
+  }
+  
+  .input-group i {
+    color: var(--primary);
+    margin-right: 0.5rem;
+  }
+  
+  .input-group input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 1rem;
+  }
+  
+  .btn-register {
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.8rem 1.5rem;
+    width: 100%;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+  }
+  
+  .btn-register:hover {
+    background: #2980b9;
+  }
+  
+  .login-link {
+    margin-top: 1rem;
+    color: var(--secondary);
+  }
+  
+  .login-link a {
+    color: var(--primary);
+    text-decoration: none;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }

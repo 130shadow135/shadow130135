@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/register.css">
+</head>
+<body>
+  <div class="register-container">
+    <div class="register-card">
+      <h2><i class="fas fa-user-plus"></i> Créer un compte</h2>
+      <form id="registerForm">
+        <div class="input-group">
+          <i class="fas fa-user"></i>
+          <input type="text" placeholder="Prénom" required>
+        </div>
+        
+        <div class="input-group">
+          <i class="fas fa-envelope"></i>
+          <input type="email" placeholder="Email" required>
+        </div>
+
+        <div class="input-group">
+          <i class="fas fa-lock"></i>
+          <input type="password" placeholder="Mot de passe" required>
+        </div>
+
+        <button type="submit" class="btn-register">S'inscrire <i class="fas fa-arrow-right"></i></button>
+      </form>
+      <p class="login-link">Déjà un compte ? <a href="login.html">Se connecter</a></p>
+    </div>
+  </div>
+  <script type="module">
+    import { registerUser } from './js/auth.js';
+    import { showNotification, toggleLoading, validateForm } from './js/ui.js';
+  
+    const registerForm = document.getElementById('registerForm');
+    const submitButton = document.getElementById('submitButton');
+  
+    registerForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+  
+      if (!validateForm(registerForm)) return;
+  
+      toggleLoading(submitButton, true);
+  
+      const firstName = document.getElementById('firstName').value;
+      const lastName = document.getElementById('lastName').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+  
+      try {
+        await registerUser(email, password, firstName, lastName);
+        showNotification('success', 'Inscription réussie !', 'Vous pouvez maintenant vous connecter.', '#3498db');
+        window.location.href = 'login.html';
+      } catch (error) {
+        showNotification('error', 'Erreur', 'Une erreur est survenue lors de l\'inscription.', '#e74c3c');
+      } finally {
+        toggleLoading(submitButton, false);
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="../css/login.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script type="module" src="../js/firebase-config.js"></script>
+  <script type="module" src="../js/auth.js"></script>
+  <script type="module" src="../js/ui.js"></script>
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-card">
+      <h2><i class="fas fa-sign-in-alt"></i> Connexion Admin</h2>
+      <form id="loginForm">
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Votre email" required>
+        </div>
+
+        <div class="input-group">
+          <label for="password">Mot de passe</label>
+          <input type="password" id="password" placeholder="Votre mot de passe" required>
+        </div>
+
+        <button type="submit" class="btn-login" id="submitButton">
+          <span id="buttonText">Se connecter <i class="fas fa-arrow-right"></i></span>
+          <span id="buttonSpinner" class="spinner hidden"><i class="fas fa-spinner fa-spin"></i></span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script type="module">
+    import { loginUser, isAdmin } from '../js/auth.js';
+    import { showNotification, toggleLoading } from '../js/ui.js';
+
+    const loginForm = document.getElementById('loginForm');
+    const submitButton = document.getElementById('submitButton');
+
+    loginForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      toggleLoading(submitButton, true);
+
+      try {
+        const user = await loginUser(email, password);
+        const admin = await isAdmin(user.uid);
+
+        if (admin) {
+          showNotification('success', 'Connexion réussie !', 'Vous êtes maintenant connecté en tant qu\'admin.', '#3498db');
+          window.location.href = 'dashboard.html';
+        } else {
+          showNotification('error', 'Accès refusé', 'Vous n\'avez pas les droits d\'administrateur.', '#e74c3c');
+          await logoutUser();
+        }
+      } catch (error) {
+        showNotification('error', 'Erreur', 'Email ou mot de passe incorrect.', '#e74c3c');
+      } finally {
+        toggleLoading(submitButton, false);
+      }
+    });
+  </script>
+</body>
+</html>

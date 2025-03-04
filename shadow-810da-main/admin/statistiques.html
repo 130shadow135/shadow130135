@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/admin-statistiques.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="navbar">
+    <h1><i class="fas fa-chart-line"></i> Statistiques</h1>
+  </div>
+
+  <div class="statistiques-container">
+    <div class="card">
+      <h3>Utilisateurs Actifs</h3>
+      <canvas id="usersChart"></canvas>
+    </div>
+
+    <div class="card">
+      <h3>Filières Populaires</h3>
+      <canvas id="filiereChart"></canvas>
+    </div>
+  </div>
+
+  <script>
+    // Exemple de graphique avec Chart.js
+    const usersCtx = document.getElementById('usersChart').getContext('2d');
+    const usersChart = new Chart(usersCtx, {
+      type: 'bar',
+      data: {
+        labels: ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Juin'],
+        datasets: [{
+          label: 'Utilisateurs Actifs',
+          data: [12, 19, 3, 5, 2, 3],
+          backgroundColor: 'rgba(52, 152, 219, 0.2)',
+          borderColor: 'rgba(52, 152, 219, 1)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+
+    const filiereCtx = document.getElementById('filiereChart').getContext('2d');
+    const filiereChart = new Chart(filiereCtx, {
+      type: 'pie',
+      data: {
+        labels: ['Informatique', 'Biologie', 'Maths', 'Physique'],
+        datasets: [{
+          label: 'Filières Populaires',
+          data: [40, 20, 15, 25],
+          backgroundColor: ['#3498db', '#2ecc71', '#e74c3c', '#9b59b6']
+        }]
+      }
+    });
+  </script>
+</body>
+</html>

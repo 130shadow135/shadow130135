@@ -1,0 +1,68 @@
+[debug] [2025-03-04T11:13:37.693Z] ----------------------------------------------------------------------
+[debug] [2025-03-04T11:13:37.697Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\user1\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init hosting
+[debug] [2025-03-04T11:13:37.697Z] CLI Version:   13.32.0
+[debug] [2025-03-04T11:13:37.698Z] Platform:      win32
+[debug] [2025-03-04T11:13:37.698Z] Node Version:  v22.14.0
+[debug] [2025-03-04T11:13:37.698Z] Time:          Tue Mar 04 2025 11:13:37 GMT+0000 (heure moyenne de Greenwich)
+[debug] [2025-03-04T11:13:37.698Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-03-04T11:13:37.709Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-03-04T11:13:37.710Z] > authorizing via signed-in user (130shadow135@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\user1\Desktop\projet firebase
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2025-03-04T11:14:15.048Z] Checked if tokens are valid: true, expires at: 1741090386244
+[debug] [2025-03-04T11:14:15.049Z] Checked if tokens are valid: true, expires at: 1741090386244
+[debug] [2025-03-04T11:14:15.057Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2025-03-04T11:14:16.995Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2025-03-04T11:14:16.995Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project shadow-810da (shadow) 
+[info] 
+=== Hosting Setup
+[debug] [2025-03-04T11:14:23.177Z] Checked if tokens are valid: true, expires at: 1741090386244
+[debug] [2025-03-04T11:14:23.177Z] Checked if tokens are valid: true, expires at: 1741090386244
+[debug] [2025-03-04T11:14:23.178Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/shadow-810da [none]
+[debug] [2025-03-04T11:14:23.761Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/shadow-810da 200
+[debug] [2025-03-04T11:14:23.761Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/shadow-810da {"projectId":"shadow-810da","projectNumber":"885882694257","displayName":"shadow","name":"projects/shadow-810da","resources":{"hostingSite":"shadow-810da"},"state":"ACTIVE","etag":"1_3a497e19-3f7a-4af4-817f-865fedbdc0db"}
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[debug] [2025-03-04T11:15:23.947Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/releases.json [none]
+[debug] [2025-03-04T11:15:24.561Z] <<< [apiv2][status] GET https://www.gstatic.com/firebasejs/releases.json 200
+[debug] [2025-03-04T11:15:24.562Z] <<< [apiv2][body] GET https://www.gstatic.com/firebasejs/releases.json {"current":{"version":"11.4.0","browserURL":"https://www.gstatic.com/firebasejs/11.4.0/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/11.4.0/firebase.tgz"},"live":{"version":"11.4","browserURL":"https://www.gstatic.com/firebasejs/live/11.4/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/live/11.4/firebase.tgz"},"components":{"analytics":"https://www.gstatic.com/firebasejs/11.4.0/firebase-analytics.js","app":"https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js","app-check":"https://www.gstatic.com/firebasejs/11.4.0/firebase-app-check.js","auth":"https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js","auth/cordova":"https://www.gstatic.com/firebasejs/11.4.0/firebase-auth/cordova.js","auth/web-extension":"https://www.gstatic.com/firebasejs/11.4.0/firebase-auth/web-extension.js","functions":"https://www.gstatic.com/firebasejs/11.4.0/firebase-functions.js","firestore":"https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js","firestore/lite":"https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore/lite.js","installations":"https://www.gstatic.com/firebasejs/11.4.0/firebase-installations.js","storage":"https://www.gstatic.com/firebasejs/11.4.0/firebase-storage.js","performance":"https://www.gstatic.com/firebasejs/11.4.0/firebase-performance.js","remote-config":"https://www.gstatic.com/firebasejs/11.4.0/firebase-remote-config.js","messaging":"https://www.gstatic.com/firebasejs/11.4.0/firebase-messaging.js","messaging/sw":"https://www.gstatic.com/firebasejs/11.4.0/firebase-messaging/sw.js","database":"https://www.gstatic.com/firebasejs/11.4.0/firebase-database.js","vertexai":"https://www.gstatic.com/firebasejs/11.4.0/firebase-vertexai.js","data-connect":"https://www.gstatic.com/firebasejs/11.4.0/firebase-data-connect.js","firestore.memory":"https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.memory.js"}}
+[info] +  Wrote public/index.html 
+[info] 
+[info] i  Detected a .git folder at C:\Users\user1 
+[info] i  Authorizing with GitHub to upload your service account to a GitHub repository's secrets store. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://github.com/login/oauth/authorize?client_id=89cf50f02ac6aaed3484&state=734467727&redirect_uri=http%3A%2F%2Flocalhost%3A9005&scope=read%3Auser%20repo%20public_repo
+[info] 
+[info] Waiting for authentication...
+[debug] [2025-03-04T11:16:17.949Z] >>> [apiv2][query] POST https://github.com/login/oauth/access_token [none]
+[debug] [2025-03-04T11:16:17.950Z] >>> [apiv2][body] POST https://github.com/login/oauth/access_token [stream]
+[debug] [2025-03-04T11:16:19.017Z] <<< [apiv2][status] POST https://github.com/login/oauth/access_token 200
+[debug] [2025-03-04T11:16:19.017Z] <<< [apiv2][body] POST https://github.com/login/oauth/access_token {"access_token":"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","token_type":"bearer","scope":"read:user,repo"}
+[debug] [2025-03-04T11:16:19.026Z] >>> [apiv2][query] GET https://api.github.com/user [none]
+[debug] [2025-03-04T11:16:20.111Z] <<< [apiv2][status] GET https://api.github.com/user 200
+[debug] [2025-03-04T11:16:20.111Z] <<< [apiv2][body] GET https://api.github.com/user {"login":"130shadow135","id":147447869,"node_id":"U_kgDOCMngPQ","avatar_url":"https://avatars.githubusercontent.com/u/147447869?v=4","gravatar_id":"","url":"https://api.github.com/users/130shadow135","html_url":"https://github.com/130shadow135","followers_url":"https://api.github.com/users/130shadow135/followers","following_url":"https://api.github.com/users/130shadow135/following{/other_user}","gists_url":"https://api.github.com/users/130shadow135/gists{/gist_id}","starred_url":"https://api.github.com/users/130shadow135/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/130shadow135/subscriptions","organizations_url":"https://api.github.com/users/130shadow135/orgs","repos_url":"https://api.github.com/users/130shadow135/repos","events_url":"https://api.github.com/users/130shadow135/events{/privacy}","received_events_url":"https://api.github.com/users/130shadow135/received_events","type":"User","user_view_type":"private","site_admin":false,"name":null,"company":null,"blog":"","location":null,"email":null,"hireable":null,"bio":null,"twitter_username":null,"notification_email":null,"public_repos":16,"public_gists":0,"followers":0,"following":1,"created_at":"2023-10-09T21:22:01Z","updated_at":"2025-03-04T11:15:43Z","private_gists":0,"total_private_repos":0,"owned_private_repos":0,"disk_usage":1681,"collaborators":0,"two_factor_authentication":false,"plan":{"name":"free","space":976562499,"collaborators":0,"private_repos":10000}}
+[info] 
+[info] +  Success! Logged into GitHub as 130shadow135 
+[info] 
